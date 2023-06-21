@@ -10,7 +10,7 @@ const postLogin = (req: Request, res: Response): void => {
 
     if (username === "admin" && password === "letmein") {
         console.log("login success");
-        (req.session as any).login = true; // Type assertion to any
+        req.session.login = true;
         console.log(req.session);
         res.redirect("/secureplace");
     } else {
