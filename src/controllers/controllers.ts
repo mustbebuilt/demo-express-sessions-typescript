@@ -13,7 +13,7 @@ function postLogin(req: Request, res: Response): void {
         console.log("login success");
 
         // req.session.login = true; // Set session value
-        (req.session as any).login = true; // Type assertion to any
+        req.session.login = true; // Type assertion to any
         console.log(req.session);
         res.redirect("/secureplace");
     } else {
